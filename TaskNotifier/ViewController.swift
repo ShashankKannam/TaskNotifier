@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             if granted{
                 print("Notification access granted")
             }else{
-                print(error?.localizedDescription ?? <#default value#>)
+                print((error?.localizedDescription)! as String)
             }
         }
         
@@ -59,6 +59,10 @@ class ViewController: UIViewController {
         let imageURL = Bundle.main.url(forResource: "rick_grimes", withExtension: "gif")
         
         let notificationContent = UNMutableNotificationContent()
+        
+        //For custom only this one line
+        notificationContent.categoryIdentifier = "myNotificationCategory"
+        
         notificationContent.title = "TaskNotifier"
         notificationContent.subtitle = "Hello!! "
     notificationContent.body = "Just to remind you the task -> \(reminderText.text!)"
