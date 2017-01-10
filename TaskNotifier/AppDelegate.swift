@@ -45,7 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func customNotifications(){
-        let category = UNNotificationCategory(identifier: "myNotificationCategory", actions: [], intentIdentifiers: [], options: [])
+        
+        //For custom actions
+        let remindMeIn5MIn = UNNotificationAction(identifier: "remindMeIn5MIn", title: "Remind me again and enter all details", options: [])
+        
+        let dismiss = UNNotificationAction(identifier: "dismiss", title: "Dismiss", options: [])
+        
+        let category = UNNotificationCategory(identifier: "myNotificationCategory", actions: [remindMeIn5MIn, dismiss], intentIdentifiers: [], options: [])
+       
         UNUserNotificationCenter.current().setNotificationCategories([category])
     }
 

@@ -33,4 +33,12 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         }
     }
 
+    func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
+        if response.actionIdentifier == "remindMeIn5MIn"{
+            completion(.dismissAndForwardAction)
+        }
+        if response.actionIdentifier == "dissmiss"{
+            completion(.dismissAndForwardAction)
+        }
+   }
 }

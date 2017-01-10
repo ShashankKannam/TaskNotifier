@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         
         //For custom only this one line
         notificationContent.categoryIdentifier = "myNotificationCategory"
-        
+
         notificationContent.title = "TaskNotifier"
         notificationContent.subtitle = "Hello!! "
     notificationContent.body = "Just to remind you the task -> \(reminderText.text!)"
@@ -91,7 +91,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
 
 }
 
